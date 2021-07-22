@@ -30,14 +30,14 @@ namespace KeLi.TrainAnimation.App.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timerTrain = new System.Windows.Forms.Timer(this.components);
+            this.tmrTrain = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // timerTrain
+            // tmrTrain
             // 
-            this.timerTrain.Enabled = true;
-            this.timerTrain.Interval = 50;
-            this.timerTrain.Tick += new System.EventHandler(this.TimerTrain_Tick);
+            this.tmrTrain.Enabled = true;
+            this.tmrTrain.Interval = 50;
+            this.tmrTrain.Tick += new System.EventHandler(this.TmrTrain_Tick);
             // 
             // TrainControl
             // 
@@ -52,6 +52,6 @@ namespace KeLi.TrainAnimation.App.Controls
 
         #endregion
 
-        private System.Windows.Forms.Timer timerTrain;
+        private System.Windows.Forms.Timer tmrTrain;
     }
 }

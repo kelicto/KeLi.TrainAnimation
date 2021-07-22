@@ -29,23 +29,23 @@ namespace KeLi.TrainAnimation.App.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.trainControl1 = new KeLi.TrainAnimation.App.Controls.TrainControl();
+            this.tcTrain = new KeLi.TrainAnimation.App.Controls.TrainControl();
             this.SuspendLayout();
             // 
-            // trainControl1
+            // tcTrain
             // 
-            this.trainControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.trainControl1.Location = new System.Drawing.Point(16, 16);
-            this.trainControl1.Name = "trainControl1";
-            this.trainControl1.Size = new System.Drawing.Size(498, 298);
-            this.trainControl1.TabIndex = 0;
+            this.tcTrain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tcTrain.Location = new System.Drawing.Point(16, 16);
+            this.tcTrain.Name = "tcTrain";
+            this.tcTrain.Size = new System.Drawing.Size(498, 298);
+            this.tcTrain.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 331);
-            this.Controls.Add(this.trainControl1);
+            this.Controls.Add(this.tcTrain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -58,7 +58,7 @@ namespace KeLi.TrainAnimation.App.Forms
 
         #endregion
 
-        private Controls.TrainControl trainControl1;
+        private Controls.TrainControl tcTrain;
     }
 }
 

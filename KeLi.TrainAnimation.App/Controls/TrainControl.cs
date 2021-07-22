@@ -9,21 +9,21 @@ namespace KeLi.TrainAnimation.App.Controls
 {
     public partial class TrainControl : UserControl
     {
-        private Graphics graphics;
+        private BackFeature _back;
 
-        private Bitmap bitmap;
+        private Bitmap _bitmap;
 
-        private Graphics drawing;
+        private CloudFeature _cloud;
 
-        private TrainFeature train;
+        private Graphics _drawing;
 
-        private WindFeature wind;
+        private Graphics _graphics;
 
-        private CloudFeature cloud;
+        private int _interval;
 
-        private BackFeature back;
+        private TrainFeature _train;
 
-        private int interval;
+        private WindFeature _wind;
 
         public TrainControl()
         {
@@ -34,91 +34,90 @@ namespace KeLi.TrainAnimation.App.Controls
 
         private void Initial()
         {
-            graphics = CreateGraphics();
-            bitmap = new Bitmap(Width, Height);
-            drawing = Graphics.FromImage(bitmap);
+            _graphics = CreateGraphics();
+            _bitmap = new Bitmap(Width, Height);
+            _drawing = Graphics.FromImage(_bitmap);
 
-            train = new TrainFeature();
-            wind = new WindFeature(Width);
-            cloud = new CloudFeature(Width);
-            back = new BackFeature(Width);
+            _train = new TrainFeature();
+            _wind = new WindFeature(Width);
+            _cloud = new CloudFeature(Width);
+            _back = new BackFeature(Width);
         }
 
         private void DrawTrain()
         {
-            if (interval % train.Interval == 0)
+            if (_interval % _train.Interval == 0)
             {
-                train.YPosition += train.YStep;
+                _train.YPosition += _train.YStep;
 
-                if (train.YPosition >= train.MaxY || train.YPosition <= 0)
-                    train.YStep *= -1;
+                if (_train.YPosition >= _train.MaxY || _train.YPosition <= 0)
+                    _train.YStep *= -1;
             }
 
             DrawElement(Resources.Train_Body, 0, 0);
-            DrawElement(Resources.Train_Wheel, 0, train.YPosition);
+            DrawElement(Resources.Train_Wheel, 0, _train.YPosition);
         }
 
         private void DrawCloud()
         {
-            if (interval % cloud.Interval == 0)
+            if (_interval % _cloud.Interval == 0)
             {
                 // To left.
-                cloud.XPosition -= cloud.XStep;
+                _cloud.XPosition -= _cloud.XStep;
 
-                if (cloud.XPosition <= cloud.MinX)
-                    cloud.XPosition = Width;
+                if (_cloud.XPosition <= _cloud.MinX)
+                    _cloud.XPosition = Width;
             }
 
-            DrawElement(Resources.Cloud, cloud.XPosition, 0);
+            DrawElement(Resources.Cloud, _cloud.XPosition, 0);
         }
 
         private void DrawWind()
         {
-            if (interval % wind.Interval == 0)
+            if (_interval % _wind.Interval == 0)
             {
                 // To left.
-                wind.XPosition -= wind.XStep;
+                _wind.XPosition -= _wind.XStep;
 
-                if (wind.XPosition <= wind.MinX)
-                    wind.XPosition = Width;
+                if (_wind.XPosition <= _wind.MinX)
+                    _wind.XPosition = Width;
             }
 
-            DrawElement(Resources.Wind, wind.XPosition, 0);
-            DrawElement(Resources.Wind, wind.XPosition > 0 ? wind.XPosition - Width : wind.XPosition + Width, 0);
+            DrawElement(Resources.Wind, _wind.XPosition, 0);
+            DrawElement(Resources.Wind, _wind.XPosition > 0 ? _wind.XPosition - Width : _wind.XPosition + Width, 0);
         }
 
         private void DrawBack()
         {
-            if (interval % back.Interval == 0)
+            if (_interval % _back.Interval == 0)
             {
                 // To left.
-                back.XPosition -= back.XStep;
+                _back.XPosition -= _back.XStep;
 
-                if (back.XPosition <= back.MinX)
-                    back.XPosition = Width;
+                if (_back.XPosition <= _back.MinX)
+                    _back.XPosition = Width;
             }
 
-            DrawElement(Resources.Back, back.XPosition, 0);
-            DrawElement(Resources.Back, back.XPosition > 0 ? back.XPosition - Width : back.XPosition + Width, 0);
+            DrawElement(Resources.Back, _back.XPosition, 0);
+            DrawElement(Resources.Back, _back.XPosition > 0 ? _back.XPosition - Width : _back.XPosition + Width, 0);
         }
 
         private void DrawElement(Bitmap elementBitmap, int x, int y)
         {
-            drawing.DrawImage(elementBitmap, x, y, Width, Height);
+            _drawing.DrawImage(elementBitmap, x, y, Width, Height);
         }
 
-        private void TimerTrain_Tick(object sender, EventArgs e)
+        private void TmrTrain_Tick(object sender, EventArgs e)
         {
-            interval += timerTrain.Interval;
-            
-            drawing.FillRectangle(Brushes.White, 0, 0, Width, Height);
+            _interval += tmrTrain.Interval;
+            _drawing.FillRectangle(Brushes.White, 0, 0, Width, Height);
 
             DrawTrain();
             DrawCloud();
             DrawWind();
             DrawBack();
 
-            graphics.DrawImage(bitmap, 0, 0, Width, Height);
+            _graphics.DrawImage(_bitmap, 0, 0, Width, Height);
         }
     }
 }
