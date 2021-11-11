@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace KeLi.TrainAnimation.App.Forms
+namespace KeLi.TrainAnimation.Forms
 {
     public partial class MainForm : Form
     {

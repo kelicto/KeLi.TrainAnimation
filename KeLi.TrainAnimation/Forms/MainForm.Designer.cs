@@ -1,5 +1,5 @@
 ﻿
-namespace KeLi.TrainAnimation.App.Forms
+namespace KeLi.TrainAnimation.Forms
 {
     partial class MainForm
     {
@@ -29,7 +29,7 @@ namespace KeLi.TrainAnimation.App.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.tcTrain = new KeLi.TrainAnimation.App.Controls.TrainControl();
+            this.tcTrain = new KeLi.TrainAnimation.Controls.TrainControl();
             this.SuspendLayout();
             // 
             // tcTrain

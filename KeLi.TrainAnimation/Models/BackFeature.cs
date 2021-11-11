@@ -1,13 +1,13 @@
-﻿namespace KeLi.TrainAnimation.App.Models
+﻿namespace KeLi.TrainAnimation.Models
 {
-    public class CloudFeature
+    public class BackFeature
     {
-        public CloudFeature(int width)
+        public BackFeature(int width)
         {
             MinX = -width;
         }
 
-        public int Interval { get; set; } = 50;
+        public int Interval { get; set; } = 100;
 
         public int XStep { get; set; } = 1;
 

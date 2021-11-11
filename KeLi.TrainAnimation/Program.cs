@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using KeLi.TrainAnimation.App.Forms;
+using KeLi.TrainAnimation.Forms;
 
-namespace KeLi.TrainAnimation.App
+namespace KeLi.TrainAnimation
 {
     internal static class Program
     {

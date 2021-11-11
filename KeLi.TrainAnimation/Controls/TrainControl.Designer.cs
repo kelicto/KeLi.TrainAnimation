@@ -1,5 +1,5 @@
 ﻿
-namespace KeLi.TrainAnimation.App.Controls
+namespace KeLi.TrainAnimation.Controls
 {
     partial class TrainControl
     {

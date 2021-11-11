@@ -1,4 +1,4 @@
-﻿namespace KeLi.TrainAnimation.App.Models
+﻿namespace KeLi.TrainAnimation.Models
 {
     public class WindFeature
     {

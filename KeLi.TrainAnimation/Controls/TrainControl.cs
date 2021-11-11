@@ -2,10 +2,10 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-using KeLi.TrainAnimation.App.Models;
-using KeLi.TrainAnimation.App.Properties;
+using KeLi.TrainAnimation.Models;
+using KeLi.TrainAnimation.Properties;
 
-namespace KeLi.TrainAnimation.App.Controls
+namespace KeLi.TrainAnimation.Controls
 {
     public partial class TrainControl : UserControl
     {
